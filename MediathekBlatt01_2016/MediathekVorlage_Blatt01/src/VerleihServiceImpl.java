@@ -122,7 +122,8 @@ class VerleihServiceImpl extends AbstractObservableService implements
     {
         for (Medium medium : medien)
         {
-            Verleihkarte karte = new Verleihkarte(kunde, medium, ausleihDatum);
+        	Verleihkarte v  = new Verleihkarte(kunde, medium, ausleihDatum);
+            _verleihkarten.put(medium, v); 
 
         }
 
@@ -150,7 +151,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
             if (!mediumImBestand(medium))
             {
                 result = false;
-                break;
+                break; 
             }
         }
         return result;

@@ -63,13 +63,32 @@ public class VerleihServiceImplTest
     }
 
     @Test
-    public void testNochEinTestFall1()
+    public void testVerleihstatusGeaendert()
     {
+    	 List<Medium> medien = new ArrayList<Medium>();
+         medien.add(_shape);
+         medien.add(_bad);
+        
+         _verleihService.verleiheAn(_brian, medien, Datum.heute());
+         assertTrue(_verleihService.istVerliehen(_shape));
+         assertTrue(_verleihService.istVerliehen(_bad));
     }
 
     @Test
-    public void testNochEinTestFall2()
+    public void testAusgelieheneMedienAnKundenZugeordnet()
     {
+    	List<Medium> medien = new ArrayList<Medium>();
+    	medien.add(_bad);
+    	medien.add(_shape);
+    	
+    	_verleihService.verleiheAn(_brian, medien, Datum.heute());
+    	List<Medium> ausgelieheneMedien = _verleihService.getAusgelieheneMedienFuer(_brian);
+    	
+    	for (Medium medium: ausgelieheneMedien)
+    	{
+    		assertTrue(medien.contains(medium));
+    	}
+    		
     }
 
     @Test
