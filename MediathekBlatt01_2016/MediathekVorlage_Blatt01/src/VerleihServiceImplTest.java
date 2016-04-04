@@ -100,7 +100,7 @@ public class VerleihServiceImplTest
     {
         _homer = new Kunde(Kundennummer.get(123456), "Homer", "Simpson");
         _roger = new Kunde(Kundennummer.get(123457), "Roger", "Smith");
-        _brian = new Kunde(Kundennummer.get(123458), "Brian", "Griffin");
+        _brian = new Kunde(Kundennummer.get(123458), "Bran", "Griffin");
 
         List<Kunde> testkunden = new ArrayList<Kunde>();
         testkunden.add(_homer);
