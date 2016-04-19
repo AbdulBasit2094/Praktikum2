@@ -22,6 +22,7 @@ interface MedienbestandService extends ObservableService
      * nachgefragt wird.
      * 
      * @param medium Ein zu entfernendes Medium
+     * @require enthaeltMedium(medium)
      */
     void entferneMedium(Medium medium);
 

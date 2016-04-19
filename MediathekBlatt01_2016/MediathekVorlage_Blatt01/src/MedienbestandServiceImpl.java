@@ -28,21 +28,47 @@ class MedienbestandServiceImpl extends AbstractObservableService
     {
         _medienbestand = new ArrayList<Medium>(medien);
     }
-
+    
+    /**
+     * Entfernt ein Medium aus dem Medienbestand, z.B. wenn es verloren gegangen
+     * ist oder so veraltet, dass es von den Mediathek-Kunden nicht mehr
+     * nachgefragt wird.
+     * 
+     * @param medium Ein zu entfernendes Medium
+     * @require enthaeltMedium(medium)
+     */
     @Override
     public void entferneMedium(Medium medium)
-    {
+    {	
+    	assert enthaeltMedium(medium): "Vorbedingung verletzt: enthealtMedium(medium)";
         _medienbestand.remove(medium);
 
         informiereUeberAenderung();
     }
-
+    
+    /**
+     * Gibt Auskunft, ob ein Medium im Medienbestand enthalten ist.
+     * 
+     * @param medium Ein Medium
+     * @return true, wenn Medium im Medienbestand enthalten ist, andernfalls
+     *         false.
+     */
+    
     @Override
     public boolean enthaeltMedium(Medium medium)
     {
+    	
         return _medienbestand.contains(medium);
     }
-
+    
+    /**
+     * Fügt ein weiteres, neu angeschafftes Medium in den Bestand ein. Ist ein
+     * Medium mehrfach angeschafft worden, so kann es auch mehrfach eingepflegt
+     * werden. Jedes Exemplar im Bestand repräsentiert ein real existierendes
+     * Medium.
+     * 
+     * @param neuesMedium Ein neues Medium
+     */
     @Override
     public void fuegeMediumEin(Medium neuesMedium)
     {
@@ -51,11 +77,22 @@ class MedienbestandServiceImpl extends AbstractObservableService
         informiereUeberAenderung();
     }
 
+    /**
+     * Liefert alle vorhandenen Medien.
+     * 
+     * @return Eine Kopie der Liste mit allen vorhandenen Medien.
+     */
     @Override
     public List<Medium> getMedien()
     {
         return new ArrayList<Medium>(_medienbestand);
     }
+    
+    /**
+     * Informiert diesen Service darüber, dass Medien von einem Werkzeug
+     * geändert wurden. Eine Implementation wird daraufhin wahrscheinlich alle
+     * ServiceBeobachter darüber informieren.
+     */
 
     @Override
     public void medienWurdenGeaendert()
