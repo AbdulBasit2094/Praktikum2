@@ -95,13 +95,13 @@ class CD implements Medium
     {
         return _kommentar;
     }
-
+    @Override
     public String getFormatiertenString()
     {
     	
-    	String neu = "Interpreter: "+getInterpret()+"\n"+getMedienBezeichnung()+"\n"+ "Spiellänge: "+getSpiellaenge()+"\n"+getKommentar()+"\n";
+    	String foramtierterString = getMedienBezeichnung()+"\n Interpreter: "+getInterpret()+"\n"+ "Spiellänge: "+getSpiellaenge()+"\n"+getKommentar()+"\n";
     	
-     return neu;
+     return foramtierterString;
     	
 //    	String s="\n";
 //		for(Medium inhalt: medien)

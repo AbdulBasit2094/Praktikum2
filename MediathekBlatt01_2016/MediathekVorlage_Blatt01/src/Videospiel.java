@@ -37,24 +37,31 @@ class Videospiel implements Medium
 		_kommentar = kommentar;
 		_system = system;
 	}
-
+	@Override
 	public String getKommentar()
 	{
 		return _kommentar;
 	}
-
+	@Override
 	public String getMedienBezeichnung()
 	{
 		return "Videospiel";
 	}
-
+	@Override
 	public String getTitel()
 	{
 		return _titel;
 	}
-
+	
 	public String getSystem()
 	{
 		return _system;
 	}
+	@Override
+    public String getFormatiertenString()
+    {
+		String foramtierterString = getMedienBezeichnung()+"\n"+getTitel()"\n"+getSystem()+"\n"+
+									getKommentar();
+		return formatierterString;
+    }
 }

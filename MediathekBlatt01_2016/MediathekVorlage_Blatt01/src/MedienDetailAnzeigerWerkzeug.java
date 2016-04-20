@@ -54,7 +54,11 @@ class MedienDetailAnzeigerWerkzeug
 			}
 			else
 			{
-				System.out.println("häääää");
+				if (inhalt instanceof Videospiel)
+				{
+					JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+					selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
+				}
 			}
 			
 			JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
