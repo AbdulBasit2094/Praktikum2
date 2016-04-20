@@ -23,9 +23,12 @@ class MedienbestandServiceImpl extends AbstractObservableService
      * Initialisiert einen neuen Medienbestand.
      * 
      * @param medien Der initiale Medienbestand.
+     * @require medien != null
      */
     public MedienbestandServiceImpl(List<Medium> medien)
     {
+    	assert medien != null : "Vorbedingung verletzt: medien != null";
+    	
         _medienbestand = new ArrayList<Medium>(medien);
     }
     
@@ -52,12 +55,14 @@ class MedienbestandServiceImpl extends AbstractObservableService
      * @param medium Ein Medium
      * @return true, wenn Medium im Medienbestand enthalten ist, andernfalls
      *         false.
+     * @require medium != null
      */
     
     @Override
     public boolean enthaeltMedium(Medium medium)
     {
-    	
+    	assert medium != null : "Vorbedingung verletzt: medium != null";
+
         return _medienbestand.contains(medium);
     }
     
@@ -72,6 +77,8 @@ class MedienbestandServiceImpl extends AbstractObservableService
     @Override
     public void fuegeMediumEin(Medium neuesMedium)
     {
+    	assert !enthaeltMedium(neuesMedium) : "Vorbedingung verletzt: !enthaeltMedium(medium)";
+
         _medienbestand.add(neuesMedium);
 
         informiereUeberAenderung();

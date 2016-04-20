@@ -82,7 +82,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
     @Override
     public boolean istVerliehen(Medium medium)
     {	
-    	assert istVerliehen(medium) : "Vorbedingung verletzt: istVerliehen(medium)";
+    	assert mediumImBestand(medium) : "Vorbedingung verletzt: mediumImBestand(medium)";
     
         return _verleihkarten.get(medium) != null;
     }
@@ -249,7 +249,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
     @Override
     public boolean mediumImBestand(Medium medium)
     {
-    	assert mediumImBestand(medium) : "Vorbedingung verletzt: mediumImBestand(medium)";
+    	//assert mediumIm(medium) : "Vorbedingung verletzt: mediumImBestand(medium)";
         return _medienbestand.enthaeltMedium(medium);
     }
     
