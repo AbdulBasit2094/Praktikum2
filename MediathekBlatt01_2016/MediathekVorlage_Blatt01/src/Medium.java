@@ -35,5 +35,10 @@ interface Medium
      * @ensure result != null
      */
     String getTitel();
+    
+    
+    
+    
+    String getFormatiertenString();
 
 }

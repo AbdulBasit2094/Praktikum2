@@ -1,3 +1,5 @@
+import javax.swing.JTextArea;
+
 /**
  * Eine CD ist ein Medium. Zusätzlich zu den Eigenschaften eines Mediums erfasst
  * sie Informationen zu Spiellänge und Interpret.
@@ -94,6 +96,54 @@ class CD implements Medium
         return _kommentar;
     }
 
+    public String getFormatiertenString()
+    {
+    	
+    	String neu = "Interpreter: "+getInterpret()+"\n"+getMedienBezeichnung()+"\n"+ "Spiellänge: "+getSpiellaenge()+"\n"+getKommentar()+"\n";
+    	
+     return neu;
+    	
+//    	String s="\n";
+//		for(Medium inhalt: medien)
+//		{
+//			
+//			if(inhalt instanceof CD)
+//			{
+//				JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//				selectedMedienTextArea.setText("Interpreter: " + ((CD) inhalt).getInterpret()+"\n"+
+//											   "Spiellänge: "  + ((CD) inhalt).getSpiellaenge()+"\n"+
+//											   "" + ((CD) inhalt).getTitel()+"\n"
+//											   );
+//				s = s +   ("-------CD--------\n"+
+//							"Interpreter: " + ((CD) inhalt).getInterpret()+"\n"+
+//						   "Spiellänge: "  + ((CD) inhalt).getSpiellaenge()+"\n"+
+//						   "" + ((CD) inhalt).getTitel()+"\n\n"
+//						   );
+//				
+//			}
+//			else if(inhalt instanceof DVD)
+//			{
+//				JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//				selectedMedienTextArea.setText("Laufzeit: " + ((DVD) inhalt).getLaufzeit()+"\n"+
+//											   "Kommentar: "  + ((DVD) inhalt).getKommentar()+"\n"+
+//											   "Titel: " + ((DVD) inhalt).getTitel()+"\n"
+//											   );
+//				s = s +   ("-------DVD--------\n"+
+//						   "Laufzeit: " + ((DVD) inhalt).getLaufzeit()+"\n"+
+//						   "Kommentar: "  + ((DVD) inhalt).getKommentar()+"\n"+
+//						   "Titel: " + ((DVD) inhalt).getTitel()+"\n\n"
+//						   );
+//				
+//			}
+//			else
+//			{
+//				System.out.println("häääää");
+//			}
+//			JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//			selectedMedienTextArea.setText(s);
+//    	
+//    	return "";
+}
     @Override
     public String getTitel()
     {

@@ -102,5 +102,11 @@ class DVD implements Medium
     {
         return _titel;
     }
+    
+    public String getFormatiertenString()
+    {
+    	//TODO
+    	return "";
+    }
 
 }
