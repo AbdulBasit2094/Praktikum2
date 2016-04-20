@@ -9,9 +9,9 @@ class Videospiel implements Medium
 	 */
 	private String _titel;
 	/**
-	 * Die konsole auf der das Videospiel benutzt werden kann.
+	 * Die system auf der das Videospiel benutzt werden kann.
 	 */
-	private String _konsole;
+	private String _system;
 	/**
 	 * Initialisiert eine neues Videospiel mit den gegebenen Daten.
 	 * 
@@ -28,14 +28,14 @@ class Videospiel implements Medium
 	 * @ensure getTitel() == titel
 	 * @ensure getKommentar() == kommentar
 	 */
-	public Videospiel(String titel, String kommentar , String konsole)
+	public Videospiel(String titel, String kommentar , String system)
 	{
 		assert titel != null : "Vorbedingung verletzt: titel != null";
 		assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
-		assert konsole != null : "Vorbedingung verletzt: Platform != null";
+		assert  system != null : "Vorbedingung verletzt: system != null";
 		_titel = titel;
 		_kommentar = kommentar;
-
+		_system = system;
 	}
 
 	public String getKommentar()
@@ -53,4 +53,8 @@ class Videospiel implements Medium
 		return _titel;
 	}
 
+	public String getSystem()
+	{
+		return _system;
+	}
 }
