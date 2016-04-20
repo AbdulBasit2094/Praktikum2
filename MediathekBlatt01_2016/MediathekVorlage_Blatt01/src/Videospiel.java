@@ -52,7 +52,12 @@ class Videospiel implements Medium
 	{
 		return _titel;
 	}
-	
+	/**
+     * Gibt das System des Viedeospiels zurück.
+     * 
+     * @return Das System des Viedeospiels.
+     * 
+     */
 	public String getSystem()
 	{
 		return _system;
