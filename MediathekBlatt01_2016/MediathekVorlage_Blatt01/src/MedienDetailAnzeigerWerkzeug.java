@@ -38,31 +38,33 @@ class MedienDetailAnzeigerWerkzeug
 		String s="\n";
 		for(Medium inhalt: medien)
 		{
-			
-			if(inhalt instanceof CD)
-			{
-				JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
-				selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
-				
-				
-			
-			}
-			else if(inhalt instanceof DVD)
-			{
-				JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
-				selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
-			}
-			else
-			{
-				if (inhalt instanceof Videospiel)
-				{
-					JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
-					selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
-				}
-			}
-			
 			JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
-			selectedMedienTextArea.setText(s);
+			selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
+			
+//			if(inhalt instanceof CD)
+//			{
+//				JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//				selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
+//				
+//				
+//			
+//			}
+//			else if(inhalt instanceof DVD)
+//			{
+//				JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//				selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
+//			}
+//			else
+//			{
+//				if (inhalt instanceof Videospiel)
+//				{
+//					JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//					selectedMedienTextArea.setText(s = s +inhalt.getFormatiertenString()+"\n");
+//				}
+//			}
+//			
+//			JTextArea selectedMedienTextArea = _ui.getMedienAnzeigerTextArea();
+//			selectedMedienTextArea.setText(s);
 		}
 	}
 	

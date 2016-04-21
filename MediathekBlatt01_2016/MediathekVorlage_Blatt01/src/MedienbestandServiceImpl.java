@@ -39,6 +39,7 @@ class MedienbestandServiceImpl extends AbstractObservableService
      * 
      * @param medium Ein zu entfernendes Medium
      * @require enthaeltMedium(medium)
+     * @ensure !enthaeltMedium(medium)
      */
     @Override
     public void entferneMedium(Medium medium)
@@ -56,6 +57,7 @@ class MedienbestandServiceImpl extends AbstractObservableService
      * @return true, wenn Medium im Medienbestand enthalten ist, andernfalls
      *         false.
      * @require medium != null
+     * 
      */
     
     @Override
@@ -73,6 +75,9 @@ class MedienbestandServiceImpl extends AbstractObservableService
      * Medium.
      * 
      * @param neuesMedium Ein neues Medium
+     * @require !enthaeltMedium(neuesMedium)
+     * 
+     * @ensure enthaeltMedium(medium)
      */
     @Override
     public void fuegeMediumEin(Medium neuesMedium)

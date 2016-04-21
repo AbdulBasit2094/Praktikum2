@@ -196,13 +196,13 @@ class MedienEinleser
         String titel = naechsterToken(tokenizer);
         String kommentar = naechsterToken(tokenizer);
 
-        Medium medium = null;
+        Medium medium = null;// Statischer Typ von medium = Medium
         if (medienBezeichnung.equals("CD"))
         {
             String interpret = naechsterToken(tokenizer);
             String spiellaenge = naechsterToken(tokenizer);
 
-            medium = new CD(titel, kommentar, interpret,
+            medium = new CD(titel, kommentar, interpret,//dynamischer Typ von medium  = CD
                     Integer.parseInt(spiellaenge));
         }
         else if (medienBezeichnung.equals("DVD"))

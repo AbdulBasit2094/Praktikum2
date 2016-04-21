@@ -249,7 +249,7 @@ class VerleihServiceImpl extends AbstractObservableService implements
     @Override
     public boolean mediumImBestand(Medium medium)
     {
-    	//assert mediumIm(medium) : "Vorbedingung verletzt: mediumImBestand(medium)";
+    	assert medium != null : "Vorbedingung verletzt: medium != null";
         return _medienbestand.enthaeltMedium(medium);
     }
     
